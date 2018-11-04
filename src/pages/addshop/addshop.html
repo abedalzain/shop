@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      {{edit ? 'Update':'Add'}} Shop 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <form [formGroup]="car" *ngIf="db.User.me">
+      <ion-item>
+        <ion-label floating>Car Name</ion-label>
+        <ion-input type="text" formControlName="carname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Car Color</ion-label>
+        <ion-input type="text" formControlName="color"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Car Price</ion-label>
+        <ion-input type="number" formControlName="price"></ion-input>
+      </ion-item>
+      <ion-row padding>
+        <button ion-button margin-right (click)="addCar()" [disabled]="!car.valid">{{edit ? 'Update':'Add'}}</button>
+        <button ion-button color="light" (click)="cancel()">Cancel</button>
+      </ion-row>
+    </form>
+
+
+</ion-content>

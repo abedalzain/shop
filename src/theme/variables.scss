@@ -1,0 +1,575 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$text-color:        #333;
+$background-color:  rgba(0,0,0,0);
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #2c6421,
+  secondary:  #449544,
+  danger:     #999,
+  light:      #f4f4f4,
+  dark:       #222,
+  favorite:   #69BB7B,
+  postSearchButtonColor : #2c6421
+);
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";
+
+
+
+/* latin */
+@font-face {
+  font-family: 'Cabin Sketch';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Sketch Regular'), local('CabinSketch-Regular'), url(https://fonts.gstatic.com/s/cabinsketch/v10/d9fijO34zQajqQvl3YHRCRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+
+.menu-logo{
+    width: 110px;
+    height: auto;
+    margin-top: 7px;
+}
+.list-md .item-block .item-inner {
+    border-bottom: 0;
+}
+
+.searchbar {
+   max-width: 500px;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 0px 10px 0px 0px !important;
+   background: transparent !important;
+}
+.searchbar-input {
+   padding: 5px 40px !important;
+   min-height: 45px !important;
+   border-radius: 3px !important;
+   border: 1px solid #999 !important;
+}
+.fixed-content {
+    background-image: url("http://img.spinij.com/images/background.jpg");
+    background-size: cover;
+    background-position: top right;
+    padding: 0px !important;
+}
+.scroll-content {
+    padding: 0px !important;
+}
+.sect1 {
+    padding: 5px 0px 7px 0px;
+    background: #2c6421;
+    color: #fff;
+    margin: 0px !important;
+    width: 100%;
+    z-index: 999;
+}
+.sect2 {
+    padding: 80px 15px !important;
+    background: transparent;
+    margin: 0 !important;
+}
+.sect3 {
+    padding: 80px 25px !important;
+    background-image: url("http://img.spinij.com/images/box.jpg");
+    background-size: cover;
+    background-position: center left;
+    margin: 0px auto 20px !important;
+    background-repeat: no-repeat;
+    max-width: 900px !important;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.sect4 {
+    padding: 80px 25px !important;
+    background-image: url("http://img.spinij.com/images/carrots.jpg");
+    background-size: cover;
+    background-position: center center;
+    margin: 0px auto !important;
+    background-repeat: no-repeat;
+    max-width: 900px !important;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.sect5 {
+    background: #333;
+    width: 100%;
+    height: 70px;
+}
+.searchbar-search-icon {
+    top: 13px !important;
+}
+.toolbar-title h1 {
+    color: #333;
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0px;
+    text-align: center;
+}
+.homeh1 {
+    color: #333;
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 50px;
+    line-height: 54px;
+    margin: 0 auto 15px;
+    text-align: center;
+    max-width: 800px;
+}
+.homeh2 {
+    color: #fff;
+    font-family: 'Cabin Sketch', cursive;
+    text-shadow: 0px 2px 5px #000;
+	font-size: 40px !important;
+    line-height: 42px !important;
+    text-align: center !important;
+}
+.homeh2small {
+    color: #fff;
+    font-family: 'Cabin Sketch', cursive;
+    text-shadow: 0px 2px 5px #000;
+	font-size: 30px !important;
+    line-height: 32px !important;
+    text-align: right !important;
+}
+.homeh2sub {
+    font-size: 20px !important;
+    line-height: 20px !important;
+    text-align: center;
+    color: #333;
+	font-family: 'Cabin Sketch', cursive;
+    margin: 0px !important;
+}
+.homeh3 {
+    text-align: center;
+    color: #fff;
+    font-family: 'Cabin Sketch', cursive;
+    margin-top: 20px;
+    margin-bottom: 0px !important;
+    display: inline-block;
+       .chosenSopeLink {
+          text-decoration: none;      
+	      color: #000 !important;
+       }
+}
+.homeh4 {
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 16px;
+    text-align: center;
+    margin: 0px;
+    padding: 5px 0px;
+}
+
+@media screen and (max-width: 414px) {
+    .homeh1 {
+        font-size: 36px !important;
+        line-height: 36px !important;
+        margin-bottom: 10px !important;
+    }
+    .homeh2 {
+        font-size: 24px !important;
+        line-height: 26px !important;
+    }
+    .homeh2small {
+        font-size: 18px !important;
+        line-height: 20px !important;
+    }
+    .homeh2sub {
+        font-size: 16px !important;
+        line-height: 16px !important;
+    }
+    .sect2 {
+        padding: 40px 0 !important;
+    }
+    .sect3, .sect4 {
+        padding: 60px 25px !important;
+    }
+	.homeh3 {
+        font-size: 18px !important;
+        line-height: 18px !important;
+        margin-top: 15px !important;
+    }
+}
+
+.bar-button-menutoggle-md ion-icon {
+   font-size: 3.4rem !important;
+}
+.toolbar {
+   min-height: 55px !important;
+   padding: 0 4px !important;
+}
+ion-menu .toolbar-background {
+   background: #2c6421 !important;
+}
+.sidemen-topbar ion-navbar {
+   height: 119px;
+}
+.platform-cordova .sidemen-topbar ion-navbar {
+   height: 134px;
+}
+.platform-cordova .logowhite {
+   margin-top: 23px !important;
+}
+.platform-cordova .sidemen-topbar .toolbar-title {
+   margin-top: 30px !important;
+}
+.sidemen-topbar .toolbar-title {
+   text-align: center;
+}
+.logowhite {
+   width: 90px;
+   height: auto;
+   margin-top: 8px;
+   margin-left: auto;
+   margin-right: auto;
+}
+.sidebar-back .scroll-content {
+   background: #fff !important;
+}
+.sidebar-back .item:hover {
+   background: #ececec !important;
+}
+.sidebar-back .item {
+    padding: 5px 5px 5px 15px !important;
+    border-bottom: 1px solid #ccc !important;
+}
+.sidebar-back .item-inner {
+    margin-left: 5px !important;
+}
+.platform-ios .sidemen-topbar ion-title {
+   padding: 0px 12px !important;
+   text-align: center !important;
+}
+.platform-ios .sidemen-topbar .toolbar-title {
+   text-align: center !important;
+}
+.sidebar-back .icon {
+   color: #2c6421 !important;
+}
+.ng-touched,.ng-untouched,.account-box {
+    background: #fff;
+    max-width: 500px !important;
+    margin: auto;
+    border-radius: 3px;
+}
+ 
+.input {
+   padding: 12px;
+   border: 1px solid #bbb;
+   border-radius: 3px;
+}
+.text-input {
+   margin: 0px !important;
+   outline: none !important;
+}
+form .label {
+   margin-left: 10px !important;
+}
+.item-inner {
+   padding: 0 !important;
+   border-bottom: 0px !important;
+}
+.resultsdd {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 4px 10px !important;
+    border-radius: 3px;
+}
+.top50 {
+   margin-top: 40px !important;
+   border: 1px solid #999;
+}
+.resultsdd .item:hover {
+  background: #ccc !important;
+}
+.resultsdd .label {
+   margin: 0px !important;
+}
+.resultsdd .item {
+  border-bottom: 1px solid #ccc !important;
+}
+.shopsitem {
+  padding: 0px !important;
+  margin: 0 !important;
+}
+.shopsitem h3 {
+  margin: 0px !important;
+}
+.shopsitem h4 {
+  margin: 0px !important;
+}
+.resultsdd .list {
+   margin-top: 1px !important;
+   background: #fff;
+   border-left: 1px solid #999;
+   border-right: 1px solid #999;
+   margin-right: 10px;
+   position: absolute;
+   width: 97%;
+}
+google-places .item {
+   padding: 0px 15px !important;
+}
+.shopbox {
+  background: #fff !important;
+  border-radius: 3px !important;
+  padding: 15px !important;
+  border: 1px solid #ccc !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avatar-img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 0px !important;
+}
+
+.grid {
+  max-width: 800px !important;
+  margin: auto !important;
+  padding: 0px !important;
+}
+.veg-item {
+    background: transparent !important;
+    padding: 0px !important;
+    border-bottom: 1px solid #ccc !important;
+}
+.veg-item ion-avatar, .veg-item label {
+   margin: 0px !important;
+}
+.orderPage{
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.picker-wrapper{
+    background: white !important;
+}
+.aboutshop {
+   background: orange;
+   border-radius: 3px;
+   opacity: 1 !important;
+   padding: 12px 20px !important;
+	color: #fff !important;
+	text-shadow: 0px 1px 2px #444;
+	border: 1px solid darkorange;
+	font-size: 16px;
+}
+.aboutshop:hover {
+   background: darkorange;
+ }
+.aboutshopbox {
+   background: #fff;
+   border-radius: 3px;
+   max-width: 500px;
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 15px !important;
+   margin-top: 50px;
+}
+.basketicon {
+   top: 0px !important;
+   position: fixed;
+}
+.trans-fab-btn {
+    background: transparent !important;
+    font-size: 1.4em !important;
+    color:#2c6421 !important;
+    box-shadow: none !important;
+    margin-top: 0px;
+    width: 46px !important;
+    padding-right: 0px !important;
+}
+.bar-button-menutoggle {
+   position: fixed !important;
+   z-index: 999;
+   display: block;
+   margin: 11px 0px 11px 5px !important;
+   top: 0px !important;
+}
+.back-button {
+   position: fixed !important;
+   z-index: 999;
+   display: block;
+   padding: 0px !important;
+   margin: 11px 0px 11px 5px !important;
+   top: 0px !important;
+}
+.toolbar-ios ion-title {
+   padding: 0 55px 1px !important;
+}
+
+/* The Modal (background) */
+.login-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 45%;
+    border-radius: 10px;
+}
+  @media screen and (max-width:750px){
+      .modal-content{
+        margin: 25% auto; /* 15% from the top and centered */
+        width: 80%;
+      }
+  }
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    color: #333;
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 30px !important;
+    line-height: 30px !important;
+    margin: 15px 0 !important;
+    text-align: center;
+    font-weight: normal !important;
+}
+
+.input-has-focus {
+    box-shadow: none !important;
+    border: 0px !important;
+}
+.item-input-has-focus {
+    box-shadow: none !important;
+    border: 0px !important;
+}
+.input-has-focus .item-inner {
+    box-shadow: none !important;
+    border: 0px !important;
+}
+.input-has-focus .input {
+    border: 1px solid #2c6421;
+}
+.platform-cordova .shopbox {
+    border-radius: 0px !important;
+}
+.platform-cordova .bar-button-menutoggle {
+    margin: 26px 0px 11px 5px !important;
+}
+.platform-cordova .back-button {
+    margin: 26px 0px 11px 5px !important;
+}
+.platform-cordova .toolbar {
+    min-height: 70px !important;
+}
+.platform-cordova ion-title {
+    margin-top: 10px !important;
+}
+.toastSuccess{
+    .toast-wrapper{
+        .toast-container{
+            .toast-message{
+                color: #3c763d !important;
+            }
+            background-color: #dff0d8 !important;
+            border-color: #d6e9c6 !important;
+        }
+        border-radius: 10px !important;
+    }
+}
+.toastDanger {
+    .toast-wrapper{
+        .toast-container{
+            .toast-message{
+                color: #a94442 !important;
+            }
+            background-color: #f2dede !important;
+            border-color: #ebccd1 !important;
+        }
+        border-radius: 10px !important;
+    }
+    // .toast-wrapper .toast-container{
+    //     .toast-message{
+    //         color: #a94442;
+    //     }
+    //     background-color: #f2dede !important;
+    //     border-color: #ebccd1 !important;
+    //     border-radius: 3px;
+    // }
+}
+.basket-toolbar{
+    background: #fff !important;
+}
+.footer .basket-toolbar .toolbar-background{
+    background: #fff !important;
+}
+.footer .basket-toolbar .icon{
+    padding: 0 !important;
+    padding: 0px 2px !important;
+}
+#basket-footer-text{
+    margin-top: 5px;
+    padding-left: 10px;
+}

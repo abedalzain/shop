@@ -1,0 +1,67 @@
+page-basket {
+    .basket-item {
+        border-bottom: none !important;
+    }
+    .basketpad{
+        padding: 0 10px !important;
+    }
+    .item-block .item-inner {
+        border-bottom: none !important;
+    }
+     .radius-left-side{
+        border-radius: 15px 0 0 15px;
+    }
+    .radius-right-side{
+        border-radius: 0 15px 15px 0;
+    }
+    .veg-item:hover{
+        background-color: #dedede;
+    }
+    .veg-btn{
+        width: 30px;
+        height: 30px;
+        font-size: 10px !important;
+    }
+    .label-md{
+        margin-top: 0 !important;
+    }
+    .label-md:first-of-type{
+        margin-top: 13px !important;
+    }
+    .basketbox{
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 25px 20px !important;
+    }
+    .basket-item .label {
+        margin: 0px !important;
+    }
+    .basketitem {
+        padding: 0px !important;
+    }
+    .basketbox .item {
+        padding: 0px !important;
+    }
+    .basketbox .label {
+        margin: 0px !important;
+    }
+    .emptyh2 {
+        font-size: 20px !important;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    }
+    .priceh2 {
+        text-align: right !important;
+        margin: 0px !important;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+        font-size: 24px !important;
+    }
+    .basketbox h3 {
+        margin: 0px !important;
+    }
+    .editOrderLink{
+      text-decoration: none;      
+	  color: #2c6421 !important;
+    }
+}

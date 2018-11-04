@@ -1,0 +1,114 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title col-12 text-center no-padding><img alt="" class="menu-logo" src="assets/images/logo.png"></ion-title>
+        <ion-fab class="basketicon" top right edge>
+        <button ion-fab class="trans-fab-btn" (click)=" goToSettings()">        
+            <ion-icon name="md-person"></ion-icon>
+        </button>
+    </ion-fab>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <section class="contentdiv">
+        <div class="row">
+            <div text-center class="container">
+                <h1 class="homeh1">Organic Food Delivery.</h1>
+                <h2 class="homeh2">Tasty, local produce delivered to your door.</h2>
+            </div>
+            <div text-center class="container">
+                <a class="aboutshop clickable" (click)="moveToHome()">Find your local shop</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contentdiv whiteback">
+        <div class="row">
+            <div class="container">
+                <h2>Fast, easy and convenient.</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="contentdiv greyback">
+        <div class="row">
+            <div class="container">
+                <h2>Healthy produce from local shops</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="contentdiv greenback">
+        <div class="row">
+            <div class="container">
+                <h2>Download the app</h2>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="row">
+            <div class="container">
+                <div col-12 col-lg-4 class="footercol" style="margin-bottom: 20px; padding-right: 0;">
+                    <img alt="" src="assets/images/logo.png" style="width: 100%; max-width: 160px; margin-bottom: 15px">
+                    <p>
+                        Spinij Street, Spinij, Spinville<br> SO15 2EW | Tel: <a href="tel:0" style="text-decoration:none;">02380 000000</a>
+                    </p>
+                </div>
+                <div col-6 col-sm-3 col-lg-2 class="footercol" style="margin-bottom: 20px;">
+                    <h3>About spinij</h3>
+                    <p>
+                        <a href="#">About</a>
+                    </p>
+                    <p>
+                        <a href="#">Ethos</a>
+                    </p>
+                    <p>
+                        <a href="#">The team</a>
+                    </p>
+                </div>
+                <div col-6 col-sm-3 col-lg-2 class="footercol" style="margin-bottom: 20px;">
+                    <h3>FAQs</h3>
+                    <p>
+                        <a href="#">How it works</a>
+                    </p>
+                    <p>
+                        <a href="#">Farmers</a>
+                    </p>
+                    <p>
+                        <a href="#s">Become a supplier</a>
+                    </p>
+                </div>
+                <div col-6 col-sm-3 col-lg-2 class="footercol" style="margin-bottom: 20px;">
+                    <h3>Boring stuff</h3>
+                    <p>
+                        <a href="#" target="_blank">Terms</a>
+                    </p>
+                    <p>
+                        <a href="#" target="_blank">Complaints</a>
+                    </p>
+                    <p>
+                        <a href="#" target="_blank">Support</a>
+                    </p>
+                </div>
+                <div col-6 col-sm-3 col-lg-2 class="footercol" style="margin-bottom: 20px;">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <a href="#" target="_blank"><span class="footersprites footersprites-facebook">&nbsp;</span>Facebook</a>
+                    </p>
+                    <p>
+                        <a href="#" target="_blank"><span class="footersprites footersprites-twitter">&nbsp;</span>Twitter</a>
+                    </p>
+                    <p>
+                        <a href="#" target="_blank"><span class="footersprites footersprites-linkedin">&nbsp;</span>Instagram</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</ion-content>

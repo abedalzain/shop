@@ -1,0 +1,45 @@
+page-shop{
+    .radius-left-side{
+        border-radius: 15px 0 0 15px;
+    }
+    .radius-right-side{
+        border-radius: 0 15px 15px 0;
+    }
+    .scroll-content {
+       padding-bottom: 70px !important;
+    }
+    .platform-cordova .scroll-content {
+        padding-bottom: 70px !important;
+    }
+    .label {
+       margin: 0px;
+    }
+    .veg-item:hover{
+        background-color: #dedede;
+    }
+    .veg-item h3{
+        margin: 0px !important;
+    }
+    .veg-btn{
+        width: 30px;
+        height: 30px;
+        font-size: 10px !important;
+    }
+    .shopbox {
+        padding: 0px !important;
+    }
+    ion-fab[top][edge] {
+        top: -55px;
+    }
+    .shop-bottom-btns:hover,.shop-bottom-btns[clear]:hover{
+        color: gray;
+        background: transparent;
+    }
+    .shop-bottom-btns[outline]:hover{
+        border-color: gray;
+    }
+    a.frontcolor.clickable{
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}

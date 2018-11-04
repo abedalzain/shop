@@ -1,0 +1,50 @@
+<ion-menu (ionOpen)="openMenu()" id="menu" type="push" [content]="mycontent" swipeEnabled="false">
+	<ion-header class="sidemen-topbar">
+
+  <ion-navbar>
+
+    <ion-title text-left id='pageTitle' class="sidemen-title"><img class="logowhite" alt="" src="http://img.spinij.com/images/logowhite.png">
+    </ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+    <ion-content class="sidebar-back" >
+    <ion-list >
+      
+      <button menuClose ion-item detail-none  *ngFor="let p of pages" (click)="openPage(p)" [class.menu__active]="checkActive(p)">
+            {{p.title }}
+			  <ion-icon [name]="p.icon" color="secondary" item-left></ion-icon>
+      </button>
+
+      <button menuClose ion-item detail-none (click)="goToMyAccount()" [class.menu__active]="checkMyAccountPageActive()" *ngIf='loginStatus'>
+          My Account
+			  <ion-icon name="md-person" color="secondary" item-left></ion-icon>
+      </button>
+
+      <button menuClose ion-item detail-none (click)="loginOrOut()" [class.menu__active]="checkMyAccountPageActive()">
+          {{ loginStatus ? 'Logout': 'Login' }}
+			  <ion-icon name="lock" color="secondary" item-left></ion-icon>
+      </button>
+    </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav id="nav" [root]="rootPage" #mycontent></ion-nav>
+
+<ion-footer *ngIf="basketService?.basketSize > 0 && checkCurrentPage()">
+  <ion-toolbar class="basket-toolbar">
+      <ion-row>
+        <ion-col col-6 text-left id="basket-footer-text" no-padding>
+          <ion-row text-wrap>
+              <ion-item no-padding><span class="greentext">{{basketService?.basketSize}}</span><ion-icon class="footerbasket" name="ios-basket"></ion-icon> Total: £{{basketService?.total}}</ion-item>
+          </ion-row>
+        </ion-col>
+        <ion-col col-6 text-right>
+          <button ion-button icon-right text-wrap color="secondary" text-left (click)="goToBasketPage()">
+            GO TO BASKET
+            <ion-icon name="ios-arrow-forward-outline" color="light"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+  </ion-toolbar>
+</ion-footer>

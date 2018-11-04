@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title col-12 text-center no-padding>
+       <h1>Choose your shop</h1>
+    </ion-title>
+    <ion-fab class="basketicon" top right edge>
+    <button ion-fab class="trans-fab-btn" (click)=" goToSettings()">
+      <ion-icon name="md-person"></ion-icon>
+    </button>
+  </ion-fab>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-list class="resultsdd">
+    <ion-row margin-bottom>
+      <google-places col-12 no-padding (onChosenPlace)="onChosenPlace($event)"></google-places>
+    </ion-row>
+    <!-- <ion-item-sliding > -->
+    <ion-item class="shopsitem" *ngFor="let shop of result;let i = index" margin-bottom>
+        <ion-row class="clickable" *ngIf="shop" (click)="viewShop(shop[1])">
+          <img *ngIf="!shop[1]?.Image" class="shopImage" col-12 col-md-4 no-padding src="http://img.spinij.com/images/noshopimage.jpg">
+          <img *ngIf="shop[1]?.Image?.length > 0" class="shopImage" col-12 col-md-4 no-padding [src]="shop[1]?.Image">
+            <!-- <ion-thumbnail >
+              
+            </ion-thumbnail> -->
+            <ion-col col-12 col-md-8 no-padding>
+              <ion-row col-12 class="justifyCenter">
+                <h3><b> {{ shop[1].Name }}</b></h3>
+              </ion-row>
+              <ion-row class="disc" col-md-12>
+                <h4> {{ shop[1].Description }}</h4> 
+              </ion-row>
+              <ion-row col-12 class="bottom-0 justifyCenter">
+                <h4><ion-icon name="ios-pin" color="secondary"></ion-icon>&nbsp;<i>{{ shop[0] }} {{shop[0]>1? 'Miles':'Mile'}}&nbsp;Away</i></h4>
+              </ion-row>
+            </ion-col>
+            <!-- <ion-col col-9>
+              
+            </ion-col>
+            <ion-col col-9 >
+              
+            </ion-col> -->
+          <!-- <ion-col>
+            
+          </ion-col> -->
+            <!-- <ion-col text-left col-12 col-sm-8>
+                 
+            </ion-col>
+            <ion-col col-12 col-sm-4 text-right>
+                  
+            </ion-col> -->
+        </ion-row>
+    </ion-item>
+    <!-- <ion-item-options  side="right">
+      <button ion-button (click)="editShop(shop[1])" ><ion-icon name="ios-create-outline"></ion-icon></button>
+      <button ion-button color="danger" (click)="deleteShop(shop[1])" ><ion-icon name="md-close"></ion-icon></button>
+    </ion-item-options>
+    </ion-item-sliding> -->
+  </ion-list >
+  <!-- <ion-fab bottom right (click)="addShop()">
+    <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+  </ion-fab> -->
+</ion-content>

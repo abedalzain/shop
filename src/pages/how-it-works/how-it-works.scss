@@ -1,0 +1,82 @@
+page-how-it-works {
+    .section {
+        padding: 0px 15px;
+        text-align: left;
+    }
+    .stepsicons {
+        font-size: 120px;
+    }
+    @media (max-width: 414px) {
+       .stepsicons {
+           font-size: 60px;
+       }
+       .homeh1 {
+           margin: 30px auto !important;
+       }
+       .contentdiv h2 {
+           font-size: 26px !important;
+           line-height: 28px !important;
+       }
+    }
+    .scroll-content {
+        padding-bottom: 70px !important;
+    }
+    .platform-cordova .scroll-content {
+        padding-bottom: 70px !important;
+    }
+    .contentdiv {
+        padding: 20px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        max-width: 550px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contentdiv h2 {
+        text-align: left !important;
+    }
+    .whiteback {
+        background: #fff;
+    }
+    .greyback {
+        background: #ececec;
+    }
+.footer {
+    font-weight: normal;
+    background: #263238;
+    padding: 50px 0;
+    color: #fff;
+}
+.container {
+    width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.footer p {
+    margin: 15px 0;
+}
+.footer a {
+    color: #ececec;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none !important;
+}
+.footer a:hover {
+    color: #2c6421;
+}
+h2 {
+   margin-bottom: 50px !important;
+}
+.homeh1 {
+   margin: 60px auto !important;
+   text-align: center;
+   padding: 0px 7px !important;
+}
+.footercol {
+   float: left;
+}
+}

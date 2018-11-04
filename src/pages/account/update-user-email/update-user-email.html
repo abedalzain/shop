@@ -1,0 +1,27 @@
+<!--
+  Generated template for the UpdateUserEmailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Update Email</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form class="loginbox" [formGroup]="email" >
+    <ion-item>
+      <ion-label floating>E-mail</ion-label>
+      <ion-input type="email" formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button text-wrap ion-button item-right (click)="changeEmailAddress()" color="secondary" [disabled]="!email.valid">Change Email</button>
+    </ion-item>
+    
+  </form>
+</ion-content>

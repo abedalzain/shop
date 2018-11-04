@@ -1,0 +1,282 @@
+<ion-header>
+  <ion-navbar>
+    <button *ngIf="!hideMenuBtn" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>
+      <h1>Your account</h1>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <!-- <ion-fab class="basketicon" top right edge>
+      <button ion-fab class="trans-fab-btn" (click)=" goToSettings()">
+         
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-fab> -->
+    
+    <ion-list col-12  *ngIf="!db.User.me">
+      <form class="loginbox" [formGroup]="user" >
+      <ion-row class="row" col-12="" no-padding>
+        <ion-col class="col" col-12="" padding-top="" text-left="">
+          <h3>Login or register</h3>
+        </ion-col>
+      </ion-row>
+      <ion-item no-padding>
+        <ion-label floating>E-mail</ion-label>
+        <ion-input type="email" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item no-padding>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" minlength="8" formControlName="password"></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col col-12 no-padding>
+          <button ion-button text-wrap margin float-right (click)="login()" color="secondary" [disabled]="!user.controls.name.valid">Login</button>
+          <button ion-button text-wrap margin float-right (click)="register()" color="secondary" outline [disabled]="!user.controls.name.valid">Register</button>
+        </ion-col>
+        <ion-col col-12 no-padding>
+          <button ion-button text-wrap color="secondary" clear no-padding float-right (click)="forgotPass()" [disabled]="!user.controls.name.valid">
+            Forgot Password?
+          </button>
+        </ion-col>
+      </ion-row>
+    </form>
+    </ion-list>
+    
+    <ion-list col-12  *ngIf="db.User.me">
+      <ion-item >
+        <ion-row class="shopbox" *ngIf="hideForms()" col-12 col-md-8 offset-md-2>
+          <ion-col text-left col-12>
+            <h3><b>Welcome,</b> {{db.User.me.Name}}.</h3>
+          </ion-col>
+          <ion-col text-left col-12>
+            <button ion-button icon-right text-wrap color="primary" (click)="startShopping()">
+              START SHOPPING
+              <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col text-right col-12 no-padding>
+            <button text-wrap ion-button no-padding clear color="secondary" (click)="goToUpdateUserName()">
+              Change Name
+            </button>
+          </ion-col>
+          <ion-col text-right col-12 no-padding>
+            <button text-wrap ion-button no-padding clear color="secondary" (click)="goToChangePass()">
+              Change Password
+            </button>
+          </ion-col>
+          <ion-col text-right col-12 no-padding>
+            <button text-wrap ion-button no-padding clear color="secondary" (click)="goToChangeEmail()">
+              Change Email Address
+            </button>
+          </ion-col>
+          <ion-col text-right col-12 no-padding>
+            <button ion-button color="danger" outline (click)="logout()">
+              Logout
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item margin-top *ngIf="hideForms()">
+        <ion-row class="shopbox"  col-12 col-md-8 offset-md-2>
+          <ion-col text-left no-padding col-12>
+            <ion-row>
+              Delivery Address
+            </ion-row>
+            <ion-row *ngFor="let userAddress of userAddresses; let i = index" margin-top="i > 0">
+              <ion-col col-9 text-left *ngIf="userAddress" no-padding>
+                <ion-row *ngIf="userAddress.key === db.User.me.AddressId">
+                  <p>
+                    [Default Address]
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="userAddress?.Address_1">
+                  <p>
+                  {{userAddress?.Address_1}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="userAddress?.Address_2">
+                  <p>
+                  {{userAddress?.Address_2}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="userAddress?.Address_3">
+                  <p>
+                  {{userAddress?.Address_3}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="userAddress?.Address_4">
+                  <p>
+                  {{userAddress?.Address_4}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="userAddress?.County">
+                  <p>
+                  {{userAddress?.County}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="userAddress?.Country">
+                  <p>
+                  {{userAddress?.Postcode}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="userAddress?.Country">
+                  <p>
+                  {{userAddress?.Country}}
+                  </p>
+                </ion-row>
+                </ion-col>
+                <ion-col text-right col-3>
+                  <button text-wrap ion-button no-padding clear color="secondary" (click)="goToUpdateUserAddress(i)">
+                    Edit
+                  </button>
+                </ion-col>
+              <ion-col col-9 *ngIf="!userAddress" no-padding>
+                <ion-row>
+                  <p>
+                  No address found.
+                  </p>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col text-right col-12 *ngIf="userAddresses != null">
+                <button text-wrap ion-button no-padding clear color="secondary" (click)="addNewDeliveryAddress()">
+                  Add New Address
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item margin-top *ngIf="hideForms()">
+        <ion-row class="shopbox" no-padding col-12 col-md-8 offset-md-2>
+          <ion-row col-12 >
+            Orders History
+          </ion-row>
+          <ion-row class="order-history-item" col-12 *ngFor="let order of pastOrders;let i = index">
+            <ion-col col-12 no-padding>
+              Order Date : {{order.createdAt | date:'short'}}
+            </ion-col>
+            <ion-col col-12 no-padding>
+              Order Cost : £{{order.Amount}}
+            </ion-col>
+          </ion-row>
+        </ion-row>
+      </ion-item>
+
+      <ion-item margin-top *ngIf="hideForms()">
+        <ion-row class="shopbox"  col-12 col-md-8 offset-md-2>
+          <ion-row col-12>
+            Payment Information
+          </ion-row>
+          <ion-row col-12 *ngFor="let payAddrss of userPaymentAddresses;let i = index">
+            <ion-col col-8>
+               <ion-row *ngIf="payAddrss?.Address_1">
+                  <p>
+                    {{payAddrss?.Address_1}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="payAddrss?.Address_2">
+                  <p>
+                    {{payAddrss?.Address_2}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="payAddrss?.Address_3">
+                  <p>
+                    {{payAddrss?.Address_3}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="payAddrss?.Address_4">
+                  <p>
+                    {{payAddrss?.Address_4}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="payAddrss?.County">
+                  <p>
+                    {{payAddrss?.County}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="payAddrss?.Country">
+                  <p>
+                  {{payAddrss?.Postcode}}
+                  </p>
+                </ion-row>
+                <ion-row *ngIf="payAddrss?.Country">
+                  <p>
+                    {{payAddrss?.Country}}
+                  </p>
+                </ion-row>
+            </ion-col>
+            <ion-col col-4 text-right>
+              <button text-wrap ion-button no-padding clear color="secondary" (click)="goToChangePayAddress(userPaymentAddresses[i])">
+                Update Information
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-row>
+      </ion-item>
+
+      <ion-item margin-top *ngIf="hideForms()">
+        <ion-row class="shopbox" no-padding col-12 col-md-8 offset-md-2>
+          <ion-row col-12 >
+            Repeat Orders
+          </ion-row>
+          <ion-row class="order-history-item" col-12 *ngFor="let order of pastOrders; let i = index">
+            <ion-col col-12 col-md-12 text-left>
+              <ion-row col-12 no-padding text-wrap>
+                Order Date : {{order?.createdAt | date:'short'}}
+              </ion-row>
+              <ion-row col-12 no-padding margin-top text-wrap>
+                <ion-row col-12 no-padding >
+                  <ion-col col-4 no-padding>
+                    Item Name
+                  </ion-col>
+                  <ion-col col-4 no-padding>
+                    Quantity
+                  </ion-col>
+                  <ion-col col-4 no-padding>
+                    Item Price
+                  </ion-col>
+                </ion-row>
+              </ion-row>
+              <ion-row col-12 no-padding text-wrap *ngFor="let oItem of ordersItems[i];let j = index;">
+                <ion-row col-12 no-padding >
+                  <ion-col col-4 no-padding>
+                    {{orderVegsNames[j]}}
+                  </ion-col>
+                  <ion-col col-4 no-padding>
+                    {{oItem?.VegQty}}
+                  </ion-col>
+                  <ion-col col-4 no-padding>
+                    {{oItem?.VegPrice}}
+                  </ion-col>
+                </ion-row>
+              </ion-row>
+              <ion-row col-12 no-padding margin-top>
+                Order Cost : £{{order?.Amount}}
+              </ion-row>
+            </ion-col>
+            <!-- <ion-col col-12 col-md-4 text-right>
+              <ion-item>
+                <button text-wrap ion-button item-right (click)="repeatOrder(order,i)" color="secondary">Repeat This Order</button>
+              </ion-item>
+            </ion-col> -->
+          </ion-row>
+        </ion-row>
+      </ion-item>
+      
+    </ion-list>
+    
+
+    
+
+</ion-content>

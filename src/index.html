@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>spinij - organic fruit & veg, delivered to your door</title>
+
+  <!--google api script-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRdUwgreLWRTsM8W8Pcf9rwS9e1VQoxrs&v=3.exp&libraries=places" async></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="http://img.spinij.com/icons/favicon.ico">
+  <link rel="apple-touch-icon" href="http://img.spinij.com/icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+  
+  <!-- Stripe -->
+  <!-- <script src="https://checkout.stripe.com/checkout.js"></script> -->
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript">
+    Stripe.setPublishableKey('pk_test_h1EWvbHLAwjMg3gLPsLuTNxd');
+  </script>
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>-->
+  
+  <link href="build/main.css" rel="stylesheet">
+
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js" async></script> 
+    
+    
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js" async></script>
+
+  <!-- The bundle js is generated during the build process -->
+  <script src="build/main.js" async></script>
+
+</body>
+</html>

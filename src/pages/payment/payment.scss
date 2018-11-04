@@ -1,0 +1,67 @@
+page-payment {
+ion-list-header.list-header{
+        border-top: none !important;
+    }
+    .titlelock {
+        font-size: 19px;
+        color: green;
+    }
+    .shopbox {
+        border-radius: 5px;
+        padding-bottom: 10px;
+    }
+    .shopbox ion-item{
+        border-bottom: none !important;
+    }
+    .paytotal {
+        font-weight: 300 !important;
+    }
+    ion-img{
+        background: transparent;
+    }
+    .payment-lable{
+        margin-left: 8px !important;
+    }
+    .payment-row-input{
+        padding: 0 5px;
+    }
+    .expiry-date{
+        margin-left: 0 !important;
+    }
+    .slide-zoom {
+        // height: 100%;
+        // overflow-y:scroll;
+        // .orderPage.row::-webkit-scrollbar { 
+        //     width: 0px !important;
+        //     background: transparent !important;
+        // } 
+    }
+    .swiper-pagination{
+        bottom: 0px !important;
+    }
+    ion-slides{
+        height: auto !important;
+    }
+    .exp-date-box {
+        padding: 10px !important;
+        border: 1px solid #ccc;
+        border-radius: 5px !important;
+    }
+    .row-item{
+        padding: 0 10px;
+    }
+    .success{
+        color: #449544;
+    }
+    .danger{
+        color: red;
+    }
+    .input.ng-invalid {
+        border: 1px solid #a94442;
+    }
+}
+ion-popover{
+    .popover-content{
+        overflow-y: hidden;
+    }
+}

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title col-12 text-center no-padding>
+      <h1>{{shop?.Name}}</h1>
+    </ion-title>
+    <ion-fab class="basketicon" top right edge>
+      <button ion-fab class="trans-fab-btn" (click)="goToSettings()">
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-fab>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+      <ion-grid>
+          <ion-row>
+            <!--<ion-row col-12 text-center>
+              <ion-col  col-12 text-center >
+                <b>
+                  Vegs
+                </b>
+              </ion-col>
+            </ion-row>-->
+            </ion-row>
+            <ion-row  class="shopbox">
+              <ion-item class="clickable veg-item" no-padding col-sm-6 col-12 *ngFor="let veg of vegs; let i = index;" (click)="vegItemClicked(i)">
+                <ion-avatar col-4 item-start no-padding>
+                    <img class="avatar-img" [src]="veg?.Photo">
+                </ion-avatar>
+                  
+              <ion-row col-12>
+              
+                <ion-row col-12 no-padding>
+                  <ion-col col-12 text-left>
+                    <h3>
+                      <b>{{veg?.Name}} </b><b>&#40;{{vegStock[i].VegWeight}}&nbsp;{{vegStock[i].WeightUnit}}&#41;</b>
+                    </h3>
+                  </ion-col>
+                </ion-row>
+                    
+                <ion-row col-12 no-padding>
+                     <ion-col col-4 col-sm-6 text-left>
+                        £{{prices[i]}}
+                     </ion-col>
+                     <ion-col no-padding col-3 col-sm-2 text-left>
+                        <button class="veg-btn" ion-button icon-only color="danger" (click)="decreaseToSizeIndex(i)">
+                           <ion-icon name="remove"></ion-icon>
+                        </button>
+                     </ion-col>
+                     <ion-col col-2 text-center>{{size[i]}}</ion-col>
+                     <ion-col no-padding col-3 col-sm-2 text-right>
+                        <button class="veg-btn" ion-button icon-only color="secondary" (click)="increaseToSizeIndex(i)">
+                          <ion-icon name="add" ></ion-icon>
+                        </button>
+                     </ion-col>
+                 </ion-row>
+                 
+               </ion-row>
+               
+             </ion-item>
+          </ion-row>
+
+        </ion-grid>
+</ion-content>

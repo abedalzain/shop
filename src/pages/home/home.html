@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center><img alt="" class="menu-logo" src="http://img.spinij.com/images/logogreen.png"></ion-title>
+      <ion-fab class="basketicon" top right edge>
+        <button ion-fab class="trans-fab-btn" (click)="goToSettings()">
+      <ion-icon name="md-person"></ion-icon>
+    </button>
+  </ion-fab>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-list class="sect1">    
+      <div class="resultsdd" text-center>
+        <!--<h2>place name:</h2>
+        <p>{{place.name}}</p>
+        <h2>place id:</h2>
+        <p>{{place.id}}</p>
+        <h2>place geo:</h2>
+        <p>{{place.geoLocation}}</p>-->
+        <ion-col col-10 float-left no-padding>
+          <google-places  (onChosenPlace)="onChosenPlace($event)"></google-places>
+        </ion-col>
+                <button class="search-btn" col-2 no-margin item-right ion-button large outline (click)="getShopsWithPlaceId()">
+          <ion-icon class="gotick" name="md-arrow-forward"></ion-icon>
+        </button>
+        <h3 class="homeh3" *ngIf="ChosenShop != null">
+      Or shop again at: <a class="chosenSopeLink clickable" (click)="goToChosenShop()" >{{ChosenShop.Name}}</a>
+    </h3>
+          <!-- <ion-item class="resultsdd" text-center text-md-left col-12 col-md-4>
+        
+      </ion-item> -->
+
+      </div>
+  </ion-list>
+  
+  <ion-list no-margin>
+  <ion-row>
+  <ion-col class="sect2" text-center>
+    <h1 class="homeh1">Organic Fruit & Veg Delivery.</h1>
+    <h2 class="homeh2sub">Grown and Delivered Locally.</h2>
+  </ion-col>
+  </ion-row> 
+  </ion-list>
+
+  <ion-list no-margin>
+  <ion-row>
+  <ion-col class="sect3">
+  <ion-col col-12 col-sm-6 text-left float-left>
+  <h2 class="homeh2">Find and order from your local organic shop or farmer in seconds.</h2>
+  </ion-col>
+  </ion-col>
+  </ion-row> 
+  </ion-list>
+  
+  <ion-list no-margin>
+  <ion-row>
+  <ion-col class="sect4">
+  <ion-col col-12 col-sm-6 offset-sm-6 text-right float-right>
+  <h2 class="homeh2small">"This is the app I've always wanted! Finally, a fast and convenient way to access local farms directly."</h2>
+  </ion-col>
+  </ion-col>
+  </ion-row> 
+  </ion-list>
+  
+  <ion-list no-margin>
+  <ion-row>
+  <ion-col class="sect5" no-padding></ion-col>
+  </ion-row> 
+  </ion-list>
+  
+</ion-content>

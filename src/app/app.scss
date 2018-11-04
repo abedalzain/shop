@@ -1,0 +1,109 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.menu__active{
+    background: #ececec;
+}
+
+.frontcolor{
+    color: #2c6421 !important;
+}
+.link{
+    text-decoration: none !important;
+}
+
+ion-footer ion-icon {
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 0px;
+    color: #2c6421;
+}
+.menuFooterLinks{
+    text-decoration: none;
+    color: #2c6421;
+    
+}
+#basket-footer-text .label {
+   margin: 0px;
+   font-size: 16px;
+}
+.greentext {
+   color: #2c6421;
+}
+.menuFooterLinks:focus,.menuFooterLinks:visited{
+    text-decoration: none;
+}
+.clickable:hover{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 750px) {
+
+        // @media screen and (max-width: 768px){
+        //     .ion-page{
+        //         margin-left: 0!important;
+        //         width:464px !important;
+        //     }
+        // }
+         
+    .ion-page{
+        margin-left: 0!important;
+        width: 100%;
+    }
+    
+    .menuFooterLinks:hover{
+        color: gray;
+        cursor: pointer;
+    }
+    #menu ion-list button.item:hover {
+        background-color: #f1f5f7;
+    }
+    
+    ion-menu {
+       width: 304px;  
+    }
+
+    .bar-button-menutoggle {
+        display: block!important;
+    }
+
+    ion-menu ion-backdrop {
+        display:none !important;
+    }
+    ion-content {
+        border-left: none!important;
+    }
+    ion-menu[type=push] .menu-inner {
+        -webkit-transform: translateX(0px)!important;
+        transform: translateX(0px)!important;
+        box-shadow: none !important;
+        width:100%!important;
+        z-index: 0!important;
+  }
+}
+
+@media (max-width: 750px) {
+    
+    page-addshop,page-shops,page-shop{
+        .bar-button-menutoggle {
+            display: none!important;
+        }
+    }
+    .bar-button-menutoggle {
+        display: block!important;
+    }
+}

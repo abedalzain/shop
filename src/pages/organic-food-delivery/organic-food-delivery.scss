@@ -1,0 +1,54 @@
+page-organic-food-delivery {
+    .contentdiv {
+        height: 400px !important;
+        padding: 40px 0;
+    }
+    .whiteback {
+        background: #fff;
+    }
+    .greyback {
+        background: #ececec;
+    }
+    .greenback {
+        background: #2c6421;
+    }
+    .greenback h2 {
+        color: #fff;
+    }
+.footer {
+    font-weight: normal;
+    background: #263238;
+    padding: 50px 0;
+    color: #fff;
+}
+.container {
+    max-width: 1170px;
+    width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.footer p {
+    margin: 15px 0;
+}
+.footer a {
+    color: #ececec;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none !important;
+}
+.footer a:hover {
+    color: #2c6421;
+}
+.homeh2 {
+   margin-bottom: 50px !important;
+}
+.homeh1 {
+   margin-top: 60px !important;
+}
+.footercol {
+   float: left;
+}
+}

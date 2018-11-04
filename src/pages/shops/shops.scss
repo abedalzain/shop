@@ -1,0 +1,37 @@
+page-shops{
+    .bottom-0 {
+        position: absolute;
+        bottom: 0;
+    }
+    .scroll-content {
+       padding-bottom: 70px !important;
+    }
+    .platform-cordova .scroll-content {
+        padding-bottom: 70px !important;
+    }
+    .resultsdd {
+       background: #fff;
+       padding: 5px 0px 0px 0px !important;
+    }
+    .searchbar {
+       padding: 0px 15px !important;
+    }
+    .shopImage{
+            height: 33.3%;
+            width: 66.7%;
+    }
+    @media (max-width:767px){
+        .bottom-0 {
+            position: relative !important;
+            
+        }
+        .disc{
+            display: none;
+        }
+        .justifyCenter{
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+    }
+}

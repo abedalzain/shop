@@ -1,0 +1,87 @@
+<!--
+  Generated template for the PaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+  *ngIf="screenWidth < 750"
+-->
+<ion-header>
+  <ion-navbar>
+    <button *ngIf="showMenuBtn" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title col-12 text-center no-padding>
+      <h1>Your basket</h1>
+    </ion-title>
+    <ion-fab class="basketicon" top right edge>
+    <button ion-fab class="trans-fab-btn" (click)=" goToSettings()">
+      <ion-icon name="md-person"></ion-icon>
+    </button>
+  </ion-fab>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list class="shopbox basketbox">
+    <ion-item class="basket-item" no-padding *ngFor="let b of basket; let i = index;">
+      <ion-row class="basketpad">
+        <!-- <ion-col col-2>
+          <img *ngIf="b" [src]="vegs[i]?.Photo" width="150px">
+        </ion-col> -->
+        <ion-col col-12 no-padding>
+          <ion-row>
+            <ion-col col-7>
+              <h3>
+                <b>{{b.VegQuantity}} × {{vegs[i]?.Name}}</b>
+              </h3>
+            </ion-col>
+            <ion-col col-5>
+              <ion-row no-padding>
+               <ion-col text-right>
+                  £{{vegs[i]?.Price}}
+               </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row class="basketpad">
+        <ion-row col-12  *ngIf="shopId != '' && basket != null && totalPrice > 0">
+          <ion-col text-right>
+            <a class="editOrderLink clickable" (click)="goToOrderShop()" >Edit Your Order</a>
+          </ion-col>
+        </ion-row>
+        <ion-row col-12>
+          <ion-col text-left *ngIf="basket == null" >
+            <h2 class="priceh2">
+              Loading ...
+            </h2>
+          </ion-col>
+          <ion-col text-right *ngIf="basket != null && totalPrice > 0">
+            <h2 class="priceh2">
+            Total Cost : £{{totalPrice}}
+            </h2>
+          </ion-col>  
+          <ion-col no-padding text-center *ngIf="basket != null && totalPrice == 0">
+            <h2 class="emptyh2">
+            Your basket is empty.
+            </h2>
+          </ion-col>  
+        </ion-row>
+        <ion-row col-12>
+          <ion-col text-right *ngIf="basket?.length > 0">
+            <button ion-button icon-right color="secondary" (click)="orderNow()">
+              ORDER NOW 
+              <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        
+      </ion-row>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>

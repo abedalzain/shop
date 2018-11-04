@@ -1,0 +1,50 @@
+<!--
+  Generated template for the UpdateUserPayAddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>updateUserPayAddress</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form class="loginbox" novalidate>
+      <ion-item>
+        <ion-label floating>Address 1</ion-label>
+        <ion-input type="text" name="address_1" [(ngModel)]="payAddressForm.address_1"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Address 2</ion-label>
+        <ion-input type="text" name="address_2" [(ngModel)]="payAddressForm.address_2"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Address 3</ion-label>
+        <ion-input type="text" name="address_3" [(ngModel)]="payAddressForm.address_3"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Address 4</ion-label>
+        <ion-input type="text" name="address_4" [(ngModel)]="payAddressForm.address_4"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>County</ion-label>
+        <ion-input type="text" name="county" [(ngModel)]="payAddressForm.county"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Postcode</ion-label>
+        <ion-input type="text" name="postcode" pattern="^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z])))) [0-9][A-Za-z]{2})$" [(ngModel)]="payAddressForm.postcode"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Country</ion-label>
+        <ion-input type="text" name="country" readonly [(ngModel)]="payAddressForm.country"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button text-wrap ion-button item-right (click)="updatePayAddress()" color="secondary" [disabled]="!checkAddressForm()">Update Payment Address</button>
+      </ion-item>
+  </form>
+</ion-content>

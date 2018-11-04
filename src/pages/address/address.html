@@ -1,0 +1,155 @@
+<!--
+  Generated template for the AddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center><h1>Billing address</h1></ion-title>
+    <ion-fab class="basketicon" top right edge>
+      <button ion-fab class="trans-fab-btn" (click)=" goToSettings()">
+         
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+    </ion-fab>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    
+   <ion-row class=" orderPage">
+      <ion-list radio-group  class="shopbox" col-12 [(ngModel)]="billingAddressRadio">
+        <ion-item>
+          <ion-label>Same as delivery address</ion-label>
+          <ion-radio [checked]="billingAddressRadio == 'sameBillAddres' " value="sameBillAddres" (ionSelect)="sameAddressAsDelivery()" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Enter billing address</ion-label>
+          <ion-radio  value="newBillAddres" (click)="newBillAddres()"></ion-radio>
+        </ion-item>
+        <ion-row  class="payment-row-input" col-12 *ngIf="billingAddressRadio != 'newBillAddres'">
+          <ion-col text-right>
+            <button ion-button icon-right color="secondary" (click)="continue()" [disabled]="billingAddressRadio == null ">
+              Continue
+              <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+      
+  </ion-row>
+    <ion-row class="orderPage" *ngIf="billingAddressRadio == 'newBillAddres'">
+      <ion-row col-12 *ngIf="showForm">
+        <ion-col text-right>
+          <button ion-button color="secondary" (click)="toggleForm()">
+            Add New Billing Address
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row col-12 *ngIf="!showForm && prevBillingAddresses?.length > 0">
+        <ion-col text-right>
+          <button ion-button color="secondary" (click)="toggleForm()">
+            Select An Existing Billing Address
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-list class="shopbox" col-12>
+        
+        <div margin-top *ngIf="showForm">
+          <ion-row col-12 >
+            <ion-col>
+              Select Your Billing Address
+            </ion-col>
+          </ion-row>
+          <div no-padding col-12 [class.border-top]="i > 0 && i < prevBillingAddresses?.length" *ngFor="let bilAddress of prevBillingAddresses; let i = index;">
+            <ion-row col-12 *ngIf="bilAddress.Address_1?.length > 0">
+              <ion-col>
+                Address 1 : {{bilAddress.Address_1 }}
+              </ion-col>
+            </ion-row>
+            <ion-row col-12 *ngIf="bilAddress.Address_2?.length > 0">
+              <ion-col>
+                Address 2 : {{bilAddress.Address_2}}
+              </ion-col>
+            </ion-row>
+            <ion-row col-12 *ngIf="bilAddress.Address_3?.length > 0">
+              <ion-col>
+                Address 3 : {{bilAddress.Address_3}}
+              </ion-col>
+            </ion-row>
+            <ion-row col-12 *ngIf="bilAddress.Address_4?.length > 0">
+              <ion-col>
+                Address 4 : {{bilAddress.Address_4}}
+              </ion-col>
+            </ion-row>
+            <ion-row col-12 *ngIf="bilAddress.County?.length > 0">
+              <ion-col>
+                County : {{bilAddress.County}}
+              </ion-col>
+            </ion-row>
+            <ion-row col-12 *ngIf="bilAddress.Country?.length > 0">
+              <ion-col>
+                Country : {{bilAddress.Country}}
+              </ion-col>
+            </ion-row>
+            <ion-row col-12>
+              <ion-col col-12 text-right>
+                <button text-wrap ion-button color="secondary" (click)="selectAndContinue(bilAddress.key)" >
+                  Select This Address And Continue
+                </button>
+              </ion-col>
+            </ion-row>
+          </div>
+        <!-- <ion-select interface="popover" [(ngModel)]="billAddress">
+          <ion-option  *ngFor="let bilAddress of prevBillingAddresses" [value]="bilAddress.key" (ionSelect)="selectedBillAddress(bilAddress.key)">
+            {{bilAddress.Address_1 }} , {{bilAddress.Address_2}} , {{bilAddress.Address_3}} , {{bilAddress.Address_4}} ,{{bilAddress.County}} , {{bilAddress.Country}}
+          </ion-option>
+          <ion-option (ionSelect)="emptyAddress('bill')">New Billing Address</ion-option>
+          <ion-option value="3">Address 3 </ion-option>
+          <ion-option value="4">Address 4 </ion-option> 
+        </ion-select> -->
+      </div>
+      <ion-row no-padding no-margin *ngIf="!showForm">
+        <ion-item class="form-item" >
+          <ion-input type="text" placeholder="Address Line 1 " [(ngModel)]="billingAddress.line1" ></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-input type="text" placeholder="Address Line 2 " [(ngModel)]="billingAddress.line2"></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-input type="text" placeholder="Address Line 3 " [(ngModel)]="billingAddress.line3"></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-input type="text" placeholder="Address Line 4 " [(ngModel)]="billingAddress.line4"></ion-input>
+        </ion-item>
+        
+        <ion-item class="form-item">
+          <ion-input type="text" placeholder="County" [(ngModel)]="billingAddress.county"></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-input type="text" placeholder="Post Code" pattern="^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z])))) [0-9][A-Za-z]{2})$" [(ngModel)]="billingAddress.postCode" ></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-input type="text" placeholder="UK" readonly [(ngModel)]="billingAddress.country" ></ion-input>
+        </ion-item>
+        <ion-row  class="payment-row-input" col-12>
+      </ion-row>
+          <ion-col text-right>
+            <button ion-button icon-right color="secondary" (click)="continue()" [disabled]="!checkBillAddressNotEmpty()">
+              Continue
+              <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-row>
+</ion-content>

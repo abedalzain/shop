@@ -1,0 +1,53 @@
+page-account {
+    form .item-inner {
+        margin: 0px !important;
+    }
+    .scroll-content {
+        padding-bottom: 70px !important;
+    }
+    .platform-cordova .scroll-content {
+        padding-bottom: 70px !important;
+    }
+    .list {
+       padding: 0px !important;
+    }
+    .item {
+       padding: 0px !important;
+    }
+    .loginbox .label {
+       margin: 10px 0px 0px 10px !important;
+    }
+    .label {
+       margin: 0px;
+    }
+    h3 {
+       font-size: 2rem !important;
+       margin: 0px !important;
+       font-weight: 500;
+       line-height: 1.2;
+    }
+    .loginbox {
+        padding: 15px 25px !important;
+        border: 1px solid #999 !important;
+    }
+    .item-button {
+        margin: 20px 0 !important;
+        padding: 20px !important;
+    }
+    .loginbox .button {
+        margin: 20px 0px 0px 10px !important;
+    }
+    .shopbox .button {
+        margin: 5px 0px 5px 0px !important;
+    }
+    .order-history-item{
+        border-bottom: 1px solid #999;
+        &:last-of-type{
+            border-bottom:none; 
+        }
+    }
+    .input-has-value.item-input-has-value .input.input-md.ng-touched.ng-dirty.ng-invalid{
+        border: 1px #d9534f solid;
+    }
+
+}
